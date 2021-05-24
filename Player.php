@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-require 'Deck.php';
-
 class Player
 {
     private const MAX_SCORE = 21;
