@@ -13,7 +13,7 @@ class Player
         $this->cards[] = $deck->drawCard();
     }
 
-    public function hit(Deck $deck)
+    public function hit(Deck $deck): void
     {
         $this->cards[] = $deck->drawCard();
         if ($this->getScore() > self::MAX_SCORE) {
@@ -21,12 +21,12 @@ class Player
         }
     }
 
-    public function surrender()
+    public function surrender(): bool
     {
         $this->lost = true;
     }
 
-    public function getScore()
+    public function getScore(): int
     {
         $score = 0;
         foreach ($this->cards as $card) {
@@ -36,7 +36,7 @@ class Player
 
     }
 
-    public function hasLost()
+    public function hasLost(): bool
     {
         return $this->lost;
     }
