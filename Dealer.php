@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 class Dealer extends Player
 {
-    public function hit(Deck $deck) {
-        while ($this->getScore() < 15) {
+    private const DRAW_UNTIL = 15;
+
+    public function hit(Deck $deck): void {
+        while ($this->getScore() < self::DRAW_UNTIL) {
             parent::hit($deck);
         }
     }
