@@ -17,17 +17,17 @@ class Blackjack
 
     public function getPlayer(): Player
     {
-
+        return $this->player;
     }
 
     public function getDealer(): Dealer
     {
-
+        return $this->dealer;
     }
 
     public function getDeck(): Deck
     {
-
+        return $this->deck;
     }
 
 }

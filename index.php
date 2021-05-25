@@ -10,6 +10,7 @@ require 'Player.php';
 require 'Suit.php';
 require 'Card.php';
 require 'Deck.php';
+require 'Dealer.php';
 
 session_start();
 
@@ -26,9 +27,11 @@ $_SESSION['new_game'] = $blackjack;
 </head>
 <body>
 
-    <button type="button">Hit</button>
-    <button type="button">Stand</button>
-    <button type="button">Surrender</button>
+    <form method="get">
+        <input type="submit" name="hit" value="Hit">
+        <input type="submit" name="stand" value="Stand">
+        <input type="submit" name="surrender" value="Surrender">
+    </form>
 
 </body>
 </html>
