@@ -14,10 +14,18 @@ require 'Dealer.php';
 
 session_start();
 
+if (!isset($_SESSION['new_game'])) {
+    $_SESSION['new_game'] = new Blackjack();
+}
+$blackjack = $_SESSION['new_game'];
+$message = "";
 
+//wrong, otherwise every page refresh will create a new Blackjack session
+//always check is your session variable is already set !!!
+/*
 $blackjack = new Blackjack();
 $_SESSION['new_game'] = $blackjack;
-$message = "";
+*/
 
 if (isset($_GET['hit'])) {
     $deck = $blackjack->getDeck();
@@ -47,12 +55,14 @@ if (isset($_GET['stand'])) {
 }
 
 if (isset($_GET['surrender'])) {
+    $blackjack->getPlayer()->surrender();
     $message = 'Player surrenders.  Dealer wins!';
 }
 
 if (isset($_GET['new_game'])) {
     session_destroy();
-    $blackjack = new Blackjack();
+    header('location: index.php');
+    exit;
 }
 
 ?>

@@ -21,7 +21,7 @@ class Player
         }
     }
 
-    public function surrender(): bool
+    public function surrender(): void
     {
         $this->lost = true;
     }
