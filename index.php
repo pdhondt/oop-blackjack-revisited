@@ -41,6 +41,9 @@ if (isset($_GET['stand'])) {
             $message = 'Dealer wins!';
         }
     }
+    else {
+        $message = 'Player wins!';
+    }
 }
 
 if (isset($_GET['surrender'])) {
