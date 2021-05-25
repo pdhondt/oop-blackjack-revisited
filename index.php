@@ -14,6 +14,7 @@ require 'Dealer.php';
 
 session_start();
 
+
 $blackjack = new Blackjack();
 $_SESSION['new_game'] = $blackjack;
 $message = "";
@@ -46,6 +47,11 @@ if (isset($_GET['surrender'])) {
     $message = 'Player surrenders.  Dealer wins!';
 }
 
+if (isset($_GET['new_game'])) {
+    session_destroy();
+    $blackjack = new Blackjack();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +66,7 @@ if (isset($_GET['surrender'])) {
         <input type="submit" name="hit" value="Hit">
         <input type="submit" name="stand" value="Stand">
         <input type="submit" name="surrender" value="Surrender">
+        <input type="submit" name="new_game" value="New Game">
     </form>
 
     <div>
