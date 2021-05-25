@@ -93,6 +93,7 @@ if (isset($_GET['new_game'])) {
             foreach ($blackjack->getPlayer()->getCards() AS $card) {
                 echo $card->getUnicodeCharacter(true);
             }
+            //php endforeach necessary?
             ?>
         </p>
     </div>
@@ -108,6 +109,7 @@ if (isset($_GET['new_game'])) {
             foreach ($blackjack->getDealer()->getCards() AS $card) {
                 echo $card->getUnicodeCharacter(true);
             }
+            //php endforeach necessary?
             ?>
         </p>
     </div>
