@@ -106,10 +106,7 @@ if (isset($_GET['new_game'])) {
         <p>
             Dealer cards:
             <?php
-            foreach ($blackjack->getDealer()->getCards() AS $card) {
-                echo $card->getUnicodeCharacter(true);
-            }
-            //php endforeach necessary?
+            echo $blackjack->getDealer()->getCards()[0]->getUnicodeCharacter(true);
             ?>
         </p>
     </div>
