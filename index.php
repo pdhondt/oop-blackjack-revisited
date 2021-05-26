@@ -18,7 +18,6 @@ if (!isset($_SESSION['new_game'])) {
     $_SESSION['new_game'] = new Blackjack();
 }
 $blackjack = $_SESSION['new_game'];
-$message = "";
 
 //wrong, otherwise every page refresh will create a new Blackjack session
 //always check is your session variable is already set !!!
@@ -113,7 +112,9 @@ if (isset($_GET['new_game'])) {
     </div>
 
     <div>
-        <?php echo $message ?>
+        <?php if (isset($message)): ?>
+            <h2><?php echo $message ?></h2>
+        <?php endif ?>
     </div>
 
 </body>
