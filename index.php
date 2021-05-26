@@ -76,9 +76,10 @@ if (isset($_GET['new_game'])) {
 <body>
 
     <form method="get">
-        <input type="submit" name="hit" value="Hit" <?php if($blackjack->getPlayer()->hasLost()):?>disabled<?php endif;?>>
-        <input type="submit" name="stand" value="Stand">
-        <input type="submit" name="surrender" value="Surrender">
+        <?php $disabledButton = $blackjack->getPlayer()->hasLost() ? 'disabled' : ''; ?>
+        <input type="submit" name="hit" value="Hit" <?php echo $disabledButton ?>>
+        <input type="submit" name="stand" value="Stand" <?php echo $disabledButton ?>>
+        <input type="submit" name="surrender" value="Surrender" <?php echo $disabledButton ?>>
         <input type="submit" name="new_game" value="New Game">
     </form>
 
