@@ -75,7 +75,7 @@ if (isset($_GET['new_game'])) {
 <body>
 
     <form method="get">
-        <?php $disabledButton = $blackjack->getPlayer()->hasLost() ? 'disabled' : ''; ?>
+        <?php $disabledButton = isset($message) ? 'disabled' : ''; ?>
         <input type="submit" name="hit" value="Hit" <?php echo $disabledButton ?>>
         <input type="submit" name="stand" value="Stand" <?php echo $disabledButton ?>>
         <input type="submit" name="surrender" value="Surrender" <?php echo $disabledButton ?>>
